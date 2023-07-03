@@ -1,6 +1,6 @@
 var delayCreateScene = function () {
     var scene = new BABYLON.Scene(ENGINE);
-    MAIN_CAMERA = new BABYLON.ArcRotateCamera("camera1", 0, 0, 1, new BABYLON.Vector3(0, 0.5, 0), scene);
+    MAIN_CAMERA = new BABYLON.ArcRotateCamera("camera1", 0, 0, 1, new BABYLON.Vector3(0, 3, -2), scene);
     MAIN_CAMERA.position = DEFAULT_CAMERA_POSITION;
     MAIN_CAMERA.attachControl(CANVAS, true);
 
@@ -18,6 +18,7 @@ var delayCreateScene = function () {
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 10, height: 10}, scene);
     var groundAggregate = new BABYLON.PhysicsAggregate(ground, BABYLON.PhysicsShapeType.BOX, { mass: 0 }, scene);
 
+    initMaterials(scene);
 
     MAIN_GUI = new GUI();
     function delay(time) {

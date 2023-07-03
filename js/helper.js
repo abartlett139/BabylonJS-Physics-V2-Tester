@@ -18,8 +18,18 @@ var GROUP1 = 1;
 var GROUP2 = 2;
 var GROUP3 = 3;
 const DEFAULT_GRAVITY = new BABYLON.Vector3(0, -4.8, 0);
+var REDMAT, BLUEMAT, GREENMAT, YELLOWMAT;
 
-
+function initMaterials(scene){
+    REDMAT = new BABYLON.StandardMaterial("redMat", scene);
+    REDMAT.diffuseColor = new BABYLON.Color3(1, 0, 0);
+    BLUEMAT = new BABYLON.StandardMaterial("blueMat", scene);
+    BLUEMAT.diffuseColor = new BABYLON.Color3(0, 0, 1);
+    GREENMAT = new BABYLON.StandardMaterial("greenMat", scene);
+    GREENMAT.diffuseColor = new BABYLON.Color3(0, 1, 0);
+    YELLOWMAT = new BABYLON.StandardMaterial("yellowMat", scene);
+    YELLOWMAT.diffuseColor = new BABYLON.Color3(1, 1, 0);
+}
 
 
 function getRandomFloat(min, max, decimals){
